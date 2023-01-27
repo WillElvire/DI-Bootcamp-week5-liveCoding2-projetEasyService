@@ -26,4 +26,6 @@
 
 ##Taches
 1 - Creer un depot github [ok]
-2 - Creation et initialisation du projet []
+2 - Creation et initialisation du projet [ok]
+3 - Fonctionalités : Creation des composants [ok]
+4 - Integration de bootstrap , font awesome etc  .. 
