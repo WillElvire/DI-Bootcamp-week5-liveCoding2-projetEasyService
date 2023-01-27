@@ -13,8 +13,11 @@ export class  VerificationService {
     return !!field;
   }
 
+  verifyPassword(entries : {password: string , passwordConfirm : string}) {
+    return entries.password  == entries.passwordConfirm;
+  }
+
   verifyObj(obj : {},logType : string = "error") {
-    let response;
     let count= 0;
     let index : number[] = [];
 

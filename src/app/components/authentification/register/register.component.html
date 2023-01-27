@@ -18,22 +18,25 @@
                   <div class="row">
                     <div class="form-outline mb-4 col">
                       <label class="form-label" for="userLastname">Nom</label>
-                      <input type="text" [(ngModel)]="register.nom" name="nom" class="form-control" placeholder="Entrez votre nom svp!" id="userLastname" />
+                      <input type="text" [(ngModel)]="user.nom" name="nom" class="form-control" placeholder="Entrez votre nom svp!" id="userLastname" />
                       <br> <span class="user-nom error"> veuillez renseigner ce champ</span>
 
                     </div>
 
                     <div class="form-outline mb-4 col">
                       <label class="form-label" for="userFistname">Prénoms</label>
-                      <input type="text" [(ngModel)]="register.prenoms" name="prenoms"  class="form-control" placeholder="Entrez vos prenoms svp!" id="userFistname" />
+                      <input type="text" [(ngModel)]="user.prenoms" name="prenoms"  class="form-control" placeholder="Entrez vos prenoms svp!" id="userFistname" />
                       <br> <span class="user-prenom error"> veuillez renseigner ce champ</span>
                     </div>
                   </div>
                   <div class="row">
                     <div class="form-outline mb-4 col">
                       <label class="form-label" for="categorie">Categorie</label>
-                      <select class="form-select" [(ngModel)]="register.category_name"   id="categorie" name="categorie" aria-label="Default select example">
-                        <option disabled selected>Selectionner une option</option>
+                      <select class="form-select" [(ngModel)]="user.category_id"   id="categorie" name="categorie" aria-label="Default select example">
+                        <option disabled selected >Selectionner une option</option>
+                        <option  [value]="categorie.id" *ngFor="let categorie of categories">
+                          {{categorie.name}}
+                        </option>
                       </select>
                       <br> <span class="user-categorie error"> veuillez selectionner la catégorie</span>
 
@@ -44,7 +47,7 @@
 
                     <div class="form-outline mb-4 col">
                       <label class="form-label" for="userEmail">Email</label>
-                      <input type="email" [(ngModel)]="register.email" name="email"  class="form-control" placeholder="Entrez votre email svp!" id="userEmail" />
+                      <input type="email" [(ngModel)]="user.email" name="email"  class="form-control" placeholder="Entrez votre email svp!" id="userEmail" />
                       <br> <span class="user-email error"> veuillez renseigner ce champ</span>
                     </div>
 
@@ -54,7 +57,7 @@
 
                     <div class="form-outline mb-4 col">
                       <label class="form-label" for="userPhone">Téléphone</label>
-                      <input type="text" class="form-control" [(ngModel)]="register.telephone" name="telephone"  placeholder="Entrez votre numéro de télephone svp!"
+                      <input type="text" class="form-control" [(ngModel)]="user.telephone" name="telephone"  placeholder="Entrez votre numéro de télephone svp!"
                         id="userPhone" />
                       <br> <span class="user-telephone error"> veuillez renseigner ce champ</span>
                     </div>
@@ -65,12 +68,12 @@
                   <div class="row">
                     <div class="form-outline mb-4 col">
                       <label class="form-label" for="userPassword">Mot de passe</label>
-                      <input type="password" class="form-control"  [(ngModel)]="register.password" name="password" id="userPassword" />
+                      <input type="password" class="form-control"  [(ngModel)]="user.password" name="password" id="userPassword" />
                       <br> <span class="user-password error"> veuillez renseigner ce champ</span>
                     </div>
                     <div class="form-outline mb-4 col">
                       <label class="form-label" for="userPasswordConfirm">Confirmation de mot de passe</label>
-                      <input type="password"  [(ngModel)]="register.passwordConfirm" name="passwordConfirm" class="form-control" id="userPasswordConfirm" />
+                      <input type="password"  [(ngModel)]="passwordConfirm" name="passwordConfirm" class="form-control" id="userPasswordConfirm" />
                       <br> <span class="user-passordconfirm error"> veuillez renseigner ce champ</span>
                     </div>
                   </div>
@@ -79,7 +82,7 @@
 
 
                     <div class="col"></div>
-                    <button type="button" class="btn btn-primary primaryBtn mt-3" (click))="soumettre()"
+                    <button type="button" class="btn btn-primary primaryBtn mt-3" (click)="soumettre()"
                       id="submit-btn">&nbsp;&nbsp;&nbsp;&nbsp;S'inscrire&nbsp;&nbsp;&nbsp;</button>
                     <!-- <button class="col btn btn-primary" id="stopbutton">Fermer la camera</button> -->
 
