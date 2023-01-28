@@ -1,0 +1,130 @@
+
+<app-header></app-header>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3 sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">
+                <span data-feather="home" class="align-text-bottom"></span>
+                Tableau de Bord
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="users" class="align-text-bottom"></span>
+                Profil
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/dash/users">
+                <span data-feather="file-text" class="align-text-bottom"></span>
+                Liste des utilisateurs
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file-text" class="align-text-bottom"></span>
+                Demande
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file-text" class="align-text-bottom"></span>
+                Mon Compte
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <!-- Appel du code Model -->
+              <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">
+                <span data-feather="file-text" class="align-text-bottom"></span>
+                Deconnexion
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+
+      <!-- Fin SideBar -->
+      <!-- Debut Notre code modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Voulez-vous Deconnecter ?</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              <button type="button" class="btn btn-primary">Oui</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fin Code modal -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+        <!-- Debut situation sur la plateforme -->
+        <div class="row">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h3 class="situation-actuelle">Situation Actuelle</h3>
+          </div>
+          <div class="row mb-2">
+            
+            <app-card 
+            [cardContent]="'Demande en cours'" 
+            [cardNumber]="'8'"
+            [cardText]="'Afficher'"></app-card>
+            <app-card 
+            [cardContent]="'Prestation Effectuees'" 
+            [cardNumber]="'7'"
+            [cardText]="'Afficher'"></app-card>
+
+            <app-card 
+            [cardContent]="'Mon Compte'" 
+            [cardNumber]="'250 000'"
+            [cardText]="'Afficher'"></app-card>
+  
+          </div>
+          <!-- canva -->
+          <canvas class="my-1 w-25" id="myChart" width="900" height="2"></canvas>
+        </div>
+        <!-- Fin sitiation plateforme -->
+
+        <!-- Quelques annonces en cours -->
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h3 class="situation-actuelle">Annonce en cours</h3>
+        </div>
+        <app-annonce 
+        [cardTitle]="'Bésoin d\'un éléctricien pour partenariat'"
+        [cardCategory]="'Electricien'"
+        [cardContenu]="' Bonjour, Nous recherchons un éléctricien qui va intégrer notre equipe pour une durée de 2 semaines. Votre profil correspond à notre attente ,j\'espère qu\'on pourra collaborer.cordialement.'"
+        ></app-annonce>
+
+        <app-annonce 
+        [cardTitle]="'Bésoin d\'un éléctricien pour partenariat'"
+        [cardCategory]="'Electricien'"
+        [cardContenu]="' Bonjour, Nous recherchons un éléctricien qui va intégrer notre equipe pour une durée de 2 semaines. Votre profil correspond à notre attente ,j\'espère qu\'on pourra collaborer.cordialement.'"
+
+      
+        ></app-annonce>
+
+       
+
+      </main>
+    </div>
+  </div>
+
