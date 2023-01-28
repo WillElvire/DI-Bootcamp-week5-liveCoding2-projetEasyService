@@ -19,6 +19,14 @@ import { LoginComponent } from './components/authentification/login/login.compon
 import { RegisterComponent } from './components/authentification/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { MetierItemComponent } from './components/shared/metier-item/metier-item.component';
+import { SidebarComponent } from './components/dashboard/sidebar/sidebar.component';
+import { HeaderComponent } from './components/dashboard/header/header.component';
+import { IndexComponent } from './components/dashboard/index/index.component';
+import { CardComponent } from './components/dashboard/card/card.component';
+import { AnnonceComponent } from './components/dashboard/annonce/annonce.component';
+import { UsersComponent } from './components/dashboard/users/users.component';
+import { UserDetailsComponent } from './components/dashboard/user-details/user-details.component';
+import { UserUpdateComponent } from './components/dashboard/user-update/user-update.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +44,15 @@ import { MetierItemComponent } from './components/shared/metier-item/metier-item
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    MetierItemComponent
+    MetierItemComponent,
+    SidebarComponent,
+    HeaderComponent,
+    IndexComponent,
+    CardComponent,
+    AnnonceComponent,
+    UsersComponent,
+    UserDetailsComponent,
+    UserUpdateComponent
   ],
   imports: [
     BrowserModule,
